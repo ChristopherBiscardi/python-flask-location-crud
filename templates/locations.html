@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+  <div class="row">
+    <ul class="locations-list span8 offset2">
+      <div class="row-fluid">
+      {% for location in locations %}
+      <li class="span6">
+        <div class="well">
+          <h4>{{ location.name|e }}</h4>
+          <p>{{ location.address|e }}</p>
+        </div>
+      </li>
+      {% else %}
+      <li><em>no locations found</em></li>
+      {% endfor %}
+      </div>
+    </ul>
+  </div>
+</div>
+{% endblock %}

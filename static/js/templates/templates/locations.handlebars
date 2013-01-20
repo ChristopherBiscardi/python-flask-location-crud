@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    {{#if locations}}
+    <ul class="locations-list span8 offset2">
+      {{#each locations}}
+      <div class="row-fluid">
+        {{#each this}}
+        <li class="span6">
+          <a href="/locations/" + this._id>
+            <div class="well">
+              <h4>{{ this.name }}</h4>
+              <p>{{ this.address }}</p>
+            </div>
+          </a>
+        </li>
+        {{/each}}
+      </div>
+      {{/each}}
+    </ul>
+    {{else}}
+    <li><em>no locations found</em></li>
+    {{/if}}
+  </div>
+</div>

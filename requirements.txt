@@ -4,3 +4,6 @@ Werkzeug==0.8.3
 distribute==0.6.31
 wsgiref==0.1.2
 gunicorn==0.17.2
+negotiate==0.0.1
+pymongo==2.4.1
+python-googlegeocoder==0.1.3

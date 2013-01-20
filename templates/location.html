@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if location %}
+    <h1>{{ location.name|e }}</h1>
+  {% else %}
+    <h1>no location found</h1>
+  {% endif %}
+{% endblock %}
