@@ -48,7 +48,10 @@ function program2(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n        <li class=\"span6\">\n          <a href=\"/locations/\" + this._id>\n            <div class=\"well\">\n              <h4>";
+  buffer += "\n        <li class=\"span6\">\n          <a href=\"/locations/";
+  stack1 = depth0._id;
+  stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1;
+  buffer += escapeExpression(stack1) + "\">\n            <div class=\"well\">\n              <h4>";
   stack1 = depth0.name;
   stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1;
   buffer += escapeExpression(stack1) + "</h4>\n              <p>";

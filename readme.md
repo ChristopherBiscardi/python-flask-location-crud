@@ -6,9 +6,10 @@ This is my first python/Flask webapp
 
     pip install -r requirements.txt
 
+also, mongodb needs to be running.
 
 ## Run
 
     Foreman Start
 
-
+navigate to localhost:5000

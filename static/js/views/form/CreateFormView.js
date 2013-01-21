@@ -37,18 +37,15 @@ define([
 						console.log(data, textStatus);
 						if(data.success){
 							alertify.success("Successfully Created. Redirecting.");
-							console.log(data);
 							vent.trigger('navigate:location', data.location);
 						}else{
 							alertify.error("Something Went Wrong!");
 						}
 					}).fail(function(jqXHR, textStatus, errorThrown){
 						alertify.error("Something Went Wrong!");
-						console.log(textStatus, errorThrown);
 					});
 				} else{
 					alertify.alert( "Please make sure both fields are filled out", function () { 
-						console.log('ok');
 					});
 				}
 			},
