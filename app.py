@@ -98,9 +98,24 @@ def show_locations():
         return {'locations': objects}
 
 
-@app.route('/locations/<id>')
+@app.route('/locations/<id>', methods=["GET", "DELETE"])
 @negotiate(JSONFormatter)
 @negotiate(HTMLFormatter, template='location.html')
+def specific_location(id):
+    if request.method == "GET":
+        return view_location(id)
+    elif request.method == "DELETE":
+        return delete_location(id)
+
+
+def delete_location(id):
+    if id is not None and len(id) == 24:
+        locationsC.remove({"_id": ObjectId(id)})
+        return {"success": True}
+    else:
+        return {"success": False}
+
+
 def view_location(id):
     if len(id) == 24:
         location = locationsC.find_one({"_id": ObjectId(id)})

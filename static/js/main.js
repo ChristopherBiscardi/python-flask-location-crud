@@ -23,7 +23,7 @@ require([
 	'templates'
 
 	], function(App){
-console.log('ss3');
+console.log('ss1');
 	// TODO: Wrap Handlebars so it's not a global.
 
 	App.initialize();

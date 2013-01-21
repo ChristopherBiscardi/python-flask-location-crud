@@ -12,7 +12,7 @@ define([
 
       },
       parse: function(response) {
-        console.log('response', response);
+        console.log(response.locations);
         return response.locations;
       }
 

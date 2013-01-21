@@ -7,10 +7,9 @@ define([
 	], function($, _, Backbone, vent, alertify){
 
 		var CreateFormView = Backbone.View.extend({
-
 			events:{
 				"submit form":"form_submit",
-				"click a":"show_locations"
+				"click a[data-role='CreateFormView:show_locations']":"show_locations"
 			},
 			render: function(){
 				$(this.el).html(Handlebars.templates.create_form({locations_link:true}));
@@ -37,6 +36,7 @@ define([
 						console.log(data, textStatus);
 						if(data.success){
 							alertify.success("Successfully Created. Redirecting.");
+							console.log('AHHAHAAHAH');
 							vent.trigger('navigate:location', data.location);
 						}else{
 							alertify.error("Something Went Wrong!");

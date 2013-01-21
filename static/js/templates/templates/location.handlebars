@@ -1,11 +1,20 @@
 <div class="container">
   <div class="row">
-    {{#if location}}
-    <h1>{{location.name}}</h1>
-    <p>{{location.address}}</p>
-    <img src="">
-    {{else}}
-    <h1>no location found</h1>
-    {{/if}}
+    <div class="span6 offset2">
+      <div class="well">
+        {{#if location}}
+        <h1>{{ location.name }}</h1>
+        <p>{{location.address}}</p>
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center={{location.lat}},{{location.lng}}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7C{{location.lat}},{{location.lng}}&sensor=false">
+      </div>
+    </div>
+    <div class="span2">
+      <div class="well">
+        <button data-role="delete" data-loc-id="{{location._id}}" class="btn btn-large btn-danger">Delete</button>
+        {{else}}
+        <h1>no location found</h1>
+        {{/if}}
+      </div>
+    </div>
   </div>
 </div>

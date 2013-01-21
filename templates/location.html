@@ -11,11 +11,11 @@
 				<img src="http://maps.googleapis.com/maps/api/staticmap?center={{location.loc[1]|e}},{{location.loc[0]|e}}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7C{{location.loc[1]|e}},{{location.loc[0]|e}}&sensor=false">
 			</div>
 		</div>
-		<div class="span2">
+<!-- 		<div class="span2">
 			<div class="well">
 				<button class="btn btn-large btn-danger">Delete</button>
 			</div>
-		</div>
+		</div> -->
 		{% else %}
 		<h1>no location found</h1>
 		{% endif %}

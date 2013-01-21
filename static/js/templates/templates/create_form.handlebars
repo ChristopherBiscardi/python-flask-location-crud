@@ -5,7 +5,7 @@
     <input type="text" placeholder="address" name="address">
     <button class="btn btn-large btn-primary">create</button>
     {{#if locations_link}}
-    <a href="/locations" class="locations">View Locations</a>
+    <a data-role="CreateFormView:show_locations" href="/locations" class="locations">View Locations</a>
     {{/if}}
   </form>
 </div>

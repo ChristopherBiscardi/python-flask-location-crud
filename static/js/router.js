@@ -12,9 +12,9 @@ define([
     var AppRouter = Backbone.Router.extend({
       routes: {
       // Define some URL routes
-      'locations': 'showLocations',
       'locations/:id': 'showLocation',
-      
+      'locations': 'showLocations',
+
       // Default
       '*actions': 'defaultAction'
     }
@@ -39,11 +39,17 @@ define([
       });
 
       app_router.on('route:showLocation', function (id) {
-        console.log("TODO: show single location for: ");
-        console.log(id);
-        // var LocationView = new LocationView({location:id});
-        // locationsView.model.fetch({_id:id})
-        // locationView.render();
+                console.log('route:showLocation');
+
+        var locationView = new LocationView();
+        locationView.model.url = "/locations/"+id;
+        locationView.model.fetch({
+          success:function(data){
+            locationView.render();
+          },
+          failure: function(err){
+              // TODO: Alertify
+            }})
       });
 
       app_router.on('route:defaultAction', function (actions) {
@@ -56,10 +62,12 @@ define([
       vent.on("navigate:locations", function () {
         app_router.navigate("/locations", true);
       });
+
       vent.on("navigate:location", function (id) {
-        console.log(id);
+
         app_router.navigate("/locations/" + id, true);
       });
+      
       Backbone.history.start({pushState:true});
     };
     return { 

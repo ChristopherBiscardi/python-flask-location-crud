@@ -6,7 +6,7 @@
       <div class="row-fluid">
         {{#each this}}
         <li class="span6">
-          <a href="/locations/{{this._id}}">
+          <a data-role="LocationsView:show_location" href="/locations/{{this._id}}" data-loc-id="{{this._id}}">
             <div class="well">
               <h4>{{ this.name }}</h4>
               <p>{{ this.address }}</p>
