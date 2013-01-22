@@ -1,5 +1,7 @@
 # Python Flask Location CRUD
 
+[![Build Status](https://travis-ci.org/ChristopherBiscardi/python-flask-location-crud.png)](https://travis-ci.org/ChristopherBiscardi/python-flask-location-crud])
+
 This is my first python/Flask webapp
 
 ## Deps
