@@ -1,0 +1,6 @@
+cd /static
+r.js -o app.build.js
+cp require.js .
+rm -rf ./js
+cd ../templates
+sed -e 's:/static/js/main:/static/main:' -e 's:/static/js/libs/require/require.js:/static/require.js:' ./layout.html
