@@ -15,3 +15,9 @@ also, mongodb needs to be running.
     Foreman Start
 
 navigate to localhost:5000
+
+## Build Production
+
+npm install r.js
+r.js -o app.build.js
+
